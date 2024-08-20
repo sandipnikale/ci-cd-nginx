@@ -24,8 +24,9 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t sandiprepo/demo:${{ github.sha }} .
+          docker build -t sandiprepo/demo:latest .
+          docker push sandiprepo/demo:latest
 
       - name: Push Docker image
         run: |
-          docker push sandiprepo/demo:${{ github.sha }}
+          docker push sandiprepo/demo:latest
